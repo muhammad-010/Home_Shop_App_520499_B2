@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/homeGuestFragment3">
+    <fragment
+        android:id="@+id/homeGuestFragment3"
+        android:name="com.example.uasolshop.home.HomeGuestFragment"
+        android:label="fragment_home_guest"
+        tools:layout="@layout/fragment_home_guest" >
+        <action
+            android:id="@+id/action_homeGuestFragment3_to_listProdukGuestFragment"
+            app:destination="@id/listProdukGuestFragment" />
+        <action
+            android:id="@+id/action_homeGuestFragment3_to_detailDataFragment2"
+            app:destination="@id/detailDataFragment2" />
+        <action
+            android:id="@+id/action_homeGuestFragment3_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listProdukGuestFragment"
+        android:name="com.example.uasolshop.listproduct.guest.ListProdukGuestFragment"
+        android:label="fragment_list_produk_guest"
+        tools:layout="@layout/fragment_list_produk_guest" >
+        <action
+            android:id="@+id/action_listProdukGuestFragment_to_detailDataFragment2"
+            app:destination="@id/detailDataFragment2" />
+        <action
+            android:id="@+id/action_listProdukGuestFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.uasolshop.history.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/profileFragmentGuest"
+        android:name="com.example.uasolshop.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/detailDataFragment2"
+        android:name="com.example.uasolshop.crud.DetailDataFragment"
+        android:label="fragment_detail_data"
+        tools:layout="@layout/fragment_detail_data" />
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.example.uasolshop.BookingFragment.BookingFragment"
+        android:label="fragment_booking"
+        tools:layout="@layout/fragment_booking" />
+
+
+</navigation>

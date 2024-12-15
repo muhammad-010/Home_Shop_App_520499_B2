@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="40dp"
+    android:gravity="center"
+    android:background="@drawable/bglogin"
+    tools:context=".auth.LoginActivity">
+
+    <ImageView
+        android:layout_width="1500dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logonya"/>
+    <TextView
+        android:id="@+id/tv_desc_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:layout_gravity="center"
+        android:textSize="15sp"
+        android:text="Aplikasi ini hanya untuk melihat katalog barang bangunan serta stoknya"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_auth"
+        android:orientation="vertical"
+        android:paddingVertical="20dp"
+        android:paddingHorizontal="40dp">
+        <TextView
+            android:id="@+id/tv_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:text="Sign Up"/>
+        <TextView
+            android:id="@+id/tv_labelusername_dftr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppinsmedium"
+
+            android:text="Username"/>
+        <EditText
+            android:id="@+id/et_user_dftr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:layout_marginBottom="20dp"
+            android:padding="13dp"
+            android:background="@drawable/rounded_input"
+            android:inputType="text"
+            />
+
+        <TextView
+            android:id="@+id/tv_labelpass_dftr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppinsmedium"
+
+            android:text="Password"/>
+        <EditText
+            android:id="@+id/et_pass_dftr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:layout_marginBottom="20dp"
+            android:padding="13dp"
+            android:background="@drawable/rounded_input"
+            android:inputType="textPassword"
+            />
+
+        <TextView
+            android:id="@+id/tv_labelcpass_dftr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppinsmedium"
+
+            android:text="Konfirmasi Password"/>
+        <EditText
+            android:id="@+id/et_cpass_dftr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:layout_marginBottom="20dp"
+            android:padding="13dp"
+            android:background="@drawable/rounded_input"
+            android:inputType="textPassword"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dftr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_button" />
+        <TextView
+            android:id="@+id/txt_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppinsregular"
+
+            android:text="Sudah punya akun? Log In disini." />
+    </LinearLayout>
+
+</LinearLayout>

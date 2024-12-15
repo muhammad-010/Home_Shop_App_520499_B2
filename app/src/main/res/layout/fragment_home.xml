@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".home.HomeAdminFragment">
+
+    <!-- Header dengan Logo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:background="#FFFFFF"
+        android:paddingHorizontal="20dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logonya" />
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Lokasi Toko -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/ic_lokasi"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/baseline_location_pin_24"
+                    android:layout_marginEnd="8dp" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_lokasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_judul_lokasi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Lokasi Toko: "
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/lokasiToko"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+
+                        android:text="Bulaksumur, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Banner -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+          />
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabIndicatorColor="@color/black"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextColor="@color/blue" />
+
+            </LinearLayout>
+            <!-- Kategori -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="3">
+                <LinearLayout
+                    android:id="@+id/btn_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/kategoriall"
+                        android:layout_width="65dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_button"
+                        android:drawableStart="@drawable/baseline_grid_view_24"
+                        android:padding="15dp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/kategoriall1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Semua" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/btn_dekorasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/kategoriDekorasi"
+                        android:layout_width="65dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_button"
+                        android:drawableStart="@drawable/cement__1_"
+                        android:padding="15dp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/kategoriDekorasi1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Dekorasi" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_Peralatan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/kategoriPeralatan"
+                        android:layout_width="65dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_button"
+                        android:drawableStart="@drawable/beam"
+                        android:padding="15dp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/kategoriPeralatan1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Pearalatan" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/btn_lainnya"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/kategorilainnya"
+                        android:layout_width="65dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_button"
+                        android:drawableStart="@drawable/baseline_more_horiz_24"
+                        android:padding="15dp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/kategorilainnya1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Lainnya" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- RecyclerView -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_top_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="Produk Terbaru"/>
+                <TextView
+                    android:id="@+id/tv_see_all"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="Lihat Semua Kategori"/>
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:minHeight="50dp"
+                android:visibility="gone"
+                android:minWidth="200dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewtopproduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#BF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="input_field">#EDEDED</color>
+    <color name="blue">#1CB4FF</color>
+    <color name="brown">#6c2c14</color>
+    <color name="icon">#B8B8B8</color>
+    <color name="yellow">#FFBF00</color>
+    <color name="red">#D70040</color>
+</resources>

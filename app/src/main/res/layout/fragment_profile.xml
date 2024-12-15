@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgprofil"
+    tools:context=".profile.ProfileFragment">
+<!--    header-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:background="#FFFFFF"
+        android:paddingHorizontal="20dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logonya" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+        <!--        judul-->
+        <TextView
+            android:id="@+id/tv_juful_profil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:fontFamily="@font/poppinssemibold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Profile"/>
+<!--card-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="20dp"
+            android:layout_margin="30dp"
+        android:background="@drawable/bg_auth">
+
+        <!-- Username -->
+        <TextView
+            android:id="@+id/tvUsernameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username:"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppinsmedium"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="JohnDoe"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppinsbold"
+            android:textSize="22sp"
+            app:layout_constraintTop_toTopOf="@id/tvUsernameLabel"
+            app:layout_constraintStart_toEndOf="@id/tvUsernameLabel"
+            android:layout_marginStart="8dp" />
+
+        <!-- Password -->
+        <TextView
+            android:id="@+id/tvPasswordLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password:"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppinsmedium"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvUsernameLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+        <TextView
+            android:id="@+id/tvPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="22sp"
+            android:fontFamily="@font/poppinsbold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="@id/tvPasswordLabel"
+            app:layout_constraintStart_toEndOf="@id/tvPasswordLabel"
+            android:layout_marginStart="8dp" />
+
+        <!-- Show/Hide Password Button -->
+        <ImageButton
+            android:id="@+id/btnTogglePassword"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:src="@drawable/ic_visibility_off"
+            app:tint="@color/black"
+            app:layout_constraintStart_toEndOf="@id/tvPassword"
+            app:layout_constraintTop_toTopOf="@id/tvPassword" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:layout_margin="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_button_logout" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

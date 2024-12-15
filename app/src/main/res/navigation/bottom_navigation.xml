@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/homeAdminFragment">
+
+    <fragment
+        android:id="@+id/homeAdminFragment"
+        android:name="com.example.uasolshop.home.HomeAdminFragment"
+        android:label="fragment_home_admin"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeAdminFragment_to_listProdukFragment3"
+            app:destination="@id/listProdukFragment3" />
+        <action
+            android:id="@+id/action_homeAdminFragment_to_editDataFragment"
+            app:destination="@id/editDataFragment" />
+        <action
+            android:id="@+id/action_homeAdminFragment_to_detailDataFragment"
+            app:destination="@id/detailDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.uasolshop.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/listProdukFragment3"
+        android:name="com.example.uasolshop.listproduct.ListProdukFragment"
+        android:label="fragment_list_produk"
+        tools:layout="@layout/fragment_list_produk" >
+        <action
+            android:id="@+id/action_listProdukFragment3_to_tambahDataFragment2"
+            app:destination="@id/tambahDataFragment2" />
+        <action
+            android:id="@+id/action_listProdukFragment3_to_editDataFragment"
+            app:destination="@id/editDataFragment" />
+        <action
+            android:id="@+id/action_listProdukFragment3_to_detailDataFragment"
+            app:destination="@id/detailDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tambahDataFragment2"
+        android:name="com.example.uasolshop.crud.TambahDataFragment"
+        android:label="fragment_tambah_data"
+        tools:layout="@layout/fragment_tambah_data" />
+    <fragment
+        android:id="@+id/editDataFragment"
+        android:name="com.example.uasolshop.crud.EditDataFragment"
+        android:label="fragment_edit_data"
+        tools:layout="@layout/fragment_edit_data" >
+    <argument
+        android:name="id"
+        app:argType="string" />
+    <argument
+        android:name="namaProduk"
+        app:argType="string" />
+    <argument
+        android:name="kategori"
+        app:argType="string" />
+    <argument
+        android:name="harga"
+        app:argType="integer" />
+    <argument
+        android:name="stok"
+        app:argType="integer" />
+    <argument
+        android:name="deskripsiBarang"
+        app:argType="string" />
+    <argument
+        android:name="fotoBarang"
+        app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailDataFragment"
+        android:name="com.example.uasolshop.crud.DetailDataFragment"
+        android:label="fragment_detail_data"
+        tools:layout="@layout/fragment_detail_data" />
+
+
+</navigation>
