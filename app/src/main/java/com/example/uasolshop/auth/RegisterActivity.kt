@@ -47,12 +47,7 @@ class RegisterActivity : AppCompatActivity() {
                     val generatedId = generateId()
                     val role = "guest"
                     val newUser = Users( username = username, password = password, role = role)
-
-                    // Call the API to create the user
-
                     checkIfUsernameExists(newUser)
-
-
                 }
             }
             txtLogin.setOnClickListener {
@@ -155,9 +150,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun generateId(): Int {
-        val multipleOf = 5 // Define the multiple you want (e.g., 5)
-
-        // Increment counter to ensure uniqueness
+        val multipleOf = 5
         counter++
         Log.d("id", "body : ${counter}")
         Log.d("id", "body : ${multipleOf}")

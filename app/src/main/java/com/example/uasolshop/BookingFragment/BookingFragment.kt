@@ -114,23 +114,6 @@ class BookingFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
     }
 
-//    private fun submitProduk() {
-//        val booking = binding.btnTglBooking.text.toString()
-//        if (validateInput(booking)) {
-////            Log.d("img", "bodi1:  ${filePath}")
-////            Log.d("img", "bodi2:  ${fotoBarang   }")
-////            val imageToUpload = if (filePath == "null" || filePath == "default_path") fotoBarang else filePath
-////            Log.d("img", "imageToUpload: $imageToUpload")
-//
-////            Log.d("img", "bodi:  ${imageToUpload }")
-////            if (imageToUpload != null) {
-//                BookProduk()
-////            }
-//        }else{
-//            Toast.makeText(requireContext(), "Isi semua field terlebih dahulu", Toast.LENGTH_SHORT).show()
-//        }
-//    }
-
     private fun validateInput( tglBook: String, banyakBook: String): Boolean {
         return when {
             tglBook.isEmpty() -> {
@@ -147,17 +130,7 @@ class BookingFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
     }
 
-    private fun BookProduk(
-//        namaProduk: String,
-//        kategori: String,
-//        harga: String,
-//        stok: String,
-//        deskripsiBrang: String,
-//        filePath : String,
-//        tglBook: String
-    ) {
-        // Log all input values before sending
-
+    private fun BookProduk() {
         val booking = binding.btnTglBooking.text.toString()
         val banyakBook = binding.etBanyakBook.text.toString()
         Log.d("tanggal", "book : ${booking}")
@@ -223,11 +196,7 @@ class BookingFragment : Fragment(), DatePickerDialog.OnDateSetListener {
                             .replace(R.id.mainGuest, HistoryFragment())
                             .addToBackStack(null) // Menambahkan ke backstack
                             .commit()
-
                     }
-
-
-
                 } catch (e: Exception) {
                     withContext(Dispatchers.Main) {
                         Log.d("ProductUpload", "Error booking product: ${e.message}")
@@ -276,7 +245,7 @@ class BookingFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
             return DatePickerDialog(
                 requireActivity(),
-                listener, // Use the passed listener
+                listener,
                 year,
                 monthOfYear,
                 dayOfMonth

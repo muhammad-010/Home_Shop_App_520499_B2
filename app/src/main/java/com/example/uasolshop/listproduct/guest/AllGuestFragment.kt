@@ -62,14 +62,8 @@ class AllGuestFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        setupRecyclerView(binding)
         fetchProducts(binding)
     }
-
-//    private fun setupRecyclerView(binding: FragmentAllGuestBinding) {
-//
-//    }
-
     private fun fetchProducts(binding: FragmentAllGuestBinding) {
         val apiService = ApiClient.getInstance()
 
@@ -100,11 +94,6 @@ class AllGuestFragment : Fragment() {
                                             deskripsiBarang = product.deskripsiBarang,
                                             fotoBarang = product.fotoBarang
                                         )
-                                        // Use parentFragmentManager to replace the fragment
-//                            parentFragmentManager.beginTransaction()
-//                                .replace(R.id.mainGuest, bookFragment)
-//                                .addToBackStack(null) // Add to back stack so you can navigate back
-//                                .commit()
                                         parentFragment?.parentFragmentManager?.beginTransaction()
                                             ?.replace(R.id.mainGuest, bookFragment)
                                             ?.addToBackStack(null) // Add to back stack so you can navigate back
@@ -123,11 +112,6 @@ class AllGuestFragment : Fragment() {
                                             deskripsiBarang = product.deskripsiBarang,
                                             fotoBarang = product.fotoBarang
                                         )
-                                        // Use parentFragmentManager to replace the fragment
-//                            parentFragmentManager.beginTransaction()
-//                                .replace(R.id.mainGuest, detaildataFragment)
-//                                .addToBackStack(null) // Add to back stack so you can navigate back
-//                                .commit()
                                         parentFragment?.parentFragmentManager?.beginTransaction()
                                             ?.replace(R.id.mainGuest, detaildataFragment)
                                             ?.addToBackStack(null)

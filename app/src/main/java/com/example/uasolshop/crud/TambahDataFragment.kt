@@ -182,7 +182,6 @@ class TambahDataFragment : Fragment(R.layout.fragment_tambah_data) {
             }
 
             override fun onFailure(call: Call<Products>, t: Throwable) {
-                // Tangani jika terjadi kesalahan jaringan atau lainnya
                 println("Koneksi gagal: ${t.message}")
             }
         })
@@ -241,92 +240,6 @@ class TambahDataFragment : Fragment(R.layout.fragment_tambah_data) {
         return path
     }
 
-
-    //    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if (requestCode == REQUEST_IMAGE_PICK && resultCode == Activity.RESULT_OK) {
-//            data?.data?.let { uri ->
-//                selectedImageUri = uri
-//                val filePath = getRealPathFromURI(uri)
-//                imageFile = File(filePath)
-//
-//                Glide.with(requireContext())
-//                    .load(uri)
-//                    .into(binding.imagePreview)
-//            }
-//        }
-//    }
-//    private fun getRealPathFromURI(uri: Uri): String {
-//        // Check different methods to get actual file path
-//        val projection = arrayOf(MediaStore.Images.Media.DATA)
-//        requireContext().contentResolver.query(uri, projection, null, null, null)?.use { cursor ->
-//            val columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
-//            cursor.moveToFirst()
-//            return cursor.getString(columnIndex)
-//        }
-//        return uri.path ?: ""
-//    }
-//override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//    super.onActivityResult(requestCode, resultCode, data)
-//    if (requestCode == REQUEST_IMAGE_PICK && resultCode == Activity.RESULT_OK) {
-//        data?.data?.let { uri ->
-//            try {
-//                // Use ContentResolver to get a more reliable file path
-//                val filePath = getFilePathFromContentUri(uri)
-//
-//                if (filePath.isNotEmpty()) {
-//                    imageFile = File(filePath)
-//
-//                    // Validate file exists and is readable
-//                    if (imageFile!!.exists() && imageFile!!.canRead()) {
-//                        // Load image preview using Glide
-//                        Glide.with(requireContext())
-//                            .load(uri)
-//                            .into(binding.imageUploadImg)
-//
-//                        Log.d("ImageSelection", "Selected image path: $filePath")
-//                    } else {
-//                        Toast.makeText(
-//                            requireContext(),
-//                            "Cannot read the selected image",
-//                            Toast.LENGTH_SHORT
-//                        ).show()
-//                    }
-//                } else {
-//                    Toast.makeText(
-//                        requireContext(),
-//                        "Could not retrieve image path",
-//                        Toast.LENGTH_SHORT
-//                    ).show()
-//                }
-//            } catch (e: Exception) {
-//                Log.e("ImageSelection", "Error processing image", e)
-//                Toast.makeText(
-//                    requireContext(),
-//                    "Error selecting image: ${e.localizedMessage}",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//            }
-//        }
-//    }
-//}
-//
-//    private fun getFilePathFromContentUri(uri: Uri): String {
-//        val projection = arrayOf(MediaStore.Images.Media.DATA)
-//        val cursor = requireContext().contentResolver.query(
-//            uri,
-//            projection,
-//            null,
-//            null,
-//            null
-//        )
-//
-//        return cursor?.use {
-//            val columnIndex = it.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
-//            it.moveToFirst()
-//            it.getString(columnIndex)
-//        } ?: ""
-//    }
     companion object {
         /**
          * Use this factory method to create a new instance of

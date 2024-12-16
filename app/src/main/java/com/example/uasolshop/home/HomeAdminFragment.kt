@@ -75,7 +75,6 @@ class HomeAdminFragment : Fragment() {
 
             tvSeeAll.setOnClickListener {
                 navigateToTab(0)
-//                (activity as MainActivityAdmin).setFragment(ListProdukFragment(), keepNavOnHome = true)
             }
             kategoriall.setOnClickListener{
                 navigateToTab(0)
@@ -157,17 +156,6 @@ class HomeAdminFragment : Fragment() {
                 .replace(R.id.fragment_container, detaildataFragment)
                 .addToBackStack(null) // Add to back stack so you can navigate back
                 .commit()
-
-//
-//            val intent = Intent(requireActivity(), DetailDataFragment::class.java)
-//            intent.putExtra("fotoBarang", fotoBarang)  // Correctly pass product details
-//            intent.putExtra("namaBarang", namaBarang)
-//            intent.putExtra("deskBarang", deskBarang)
-//            intent.putExtra("harga", harga)
-//            intent.putExtra("stok", stok)
-//            intent.putExtra("kategori", kategori)
-//            startActivity(intent)
-
         })
         binding.recyclerViewtopproduct.apply {
             layoutManager = GridLayoutManager(context, 2)
@@ -176,9 +164,6 @@ class HomeAdminFragment : Fragment() {
     }
 
     private fun fetchProducts(binding: FragmentHomeBinding) {
-//        binding.progressbar.visibility = View.VISIBLE
-//        val loadingFragment = LoadingFragment()
-//        loadingFragment.show(parentFragmentManager, "LoadingFragment")
         // Tampilkan loading
         val fragmentWeakReference = WeakReference(this)
 
@@ -197,15 +182,7 @@ class HomeAdminFragment : Fragment() {
                 call: Call<List<Products>>,
                 response: Response<List<Products>>
             ) {
-                Log.d("loading", "iniiiiiiiiii")
-//                binding.progressbar.visibility = View.GONE
-//                parentFragment?.parentFragmentManager?.findFragmentByTag("LoadingFragment")?.let {
-//                    (it as DialogFragment).dismiss()
-//                }
-//                val fragment = parentFragmentManager.findFragmentByTag("LoadingFragment")
-//                if (fragment != null) {
-//                    (fragment as DialogFragment).dismiss()
-//                }
+                Log.d("loading", "PASS")
                 fragmentWeakReference.get()?.let { fragment ->
                     // Ensure the fragment is still in a valid state
                     if (fragment.isAdded && !fragment.isDetached) {
@@ -224,17 +201,11 @@ class HomeAdminFragment : Fragment() {
 
                                 Log.d("FetchProducts", "Reversed products: $reversedProducts")
                                 Log.d("FetchProducts", "Limited products: $limitedProducts")
-
-//                        productList.addAll(limitedProducts)
-//                        Log.d("FetchProducts", "Product list after addAll: $productList")
-
                                 adapterRetrofit.updateData(limitedProducts)
                                 Log.d(
                                     "FetchProducts",
                                     "Product list after addAllsize1: ${productList.size}"
                                 )
-
-//                        binding.recyclerViewtopproduct.adapter = adapterRetrofit
                                 Log.d(
                                     "FetchProducts",
                                     "Product list after addAllsize: ${productList.size}"
@@ -250,11 +221,6 @@ class HomeAdminFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<List<Products>>, t: Throwable) {
-//                binding.progressbar.visibility = View.GONE
-                // Hapus LoadingFragment
-//                parentFragment?.parentFragmentManager?.findFragmentByTag("LoadingFragment")?.let {
-//                    (it as DialogFragment).dismiss()
-//                }
                 fragmentWeakReference.get()?.let { fragment ->
                     // Ensure the fragment is still in a valid state
                     if (fragment.isAdded && !fragment.isDetached) {
@@ -264,10 +230,6 @@ class HomeAdminFragment : Fragment() {
                         if (loadingDialogFragment is DialogFragment) {
                             loadingDialogFragment.dismiss()
                         }
-//                val fragment = parentFragmentManager.findFragmentByTag("LoadingFragment")
-//                if (fragment != null) {
-//                    (fragment as DialogFragment).dismiss()
-//                }
                         Log.e("Network Error", "Error fetching products: ${t.message}")
                     }
                 }

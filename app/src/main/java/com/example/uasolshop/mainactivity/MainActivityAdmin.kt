@@ -50,20 +50,6 @@ class MainActivityAdmin : AppCompatActivity() {
                 else -> false
             }
         }
-
-//        with(binding){
-//            val navController = findNavController(R.id.nav_host_fragment)
-//            bottomNavigationView.setupWithNavController(navController)
-////            recyclerViewtopproduct.apply {
-////                adapter = adaptertopproduct
-////                layoutManager = GridLayoutManager(this@MainActivityAdmin,2)
-////            }
-////            tvSeeAll.setOnClickListener(){
-////                val intent = Intent(this@MainActivityAdmin,ListProductActivity::class.java)
-////                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-////                startActivity(intent)
-////            }
-//        }
     }
     fun setFragment(fragment: Fragment, keepNavOnHome: Boolean = false) {
         Log.d("FragmentTransaction", "Replacing with fragment: ${fragment::class.java.simpleName}")

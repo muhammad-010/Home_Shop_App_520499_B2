@@ -62,48 +62,16 @@ class LainnyaFragment(parentFragment: FragmentManager) : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // Initialize Adapter
-//        productAdapter = ProductAdapter()
-
         fetchProducts(binding)
-        // Setup RecyclerView
-//        with(binding.recyclerViewtopproduct) {
-//            layoutManager = GridLayoutManager(context, 2) // Menggunakan GridLayoutManager
-//            adapter = productAdapter
-//        }
     }
 
     private fun fetchProducts(binding: FragmentLainnyaBinding) {
-//        val fragmentWeakReference = WeakReference(this)
-//
-//        val loadingFragment = LoadingFragment()
-//
-//        // Safely check if the fragment is still attached before showing loading
-//        fragmentWeakReference.get()?.let { fragment ->
-//            if (fragment.isAdded && !fragment.isDetached) {
-//                loadingFragment.show(fragment.parentFragmentManager, "LoadingFragment")
-//            }
-//        }
         val apiService = ApiClient.getInstance()
-
         apiService.getAllProducts().enqueue(object : Callback<List<Products>> {
             override fun onResponse(
                 call: Call<List<Products>>,
                 response: Response<List<Products>>
             ) {
-//                fragmentWeakReference.get()?.let { fragment ->
-//                    // Ensure the fragment is still in a valid state
-//                    if (fragment.isAdded && !fragment.isDetached) {
-//                        Log.d("hiiii", "lodingggggg : ${fragment}")
-//                        // Dismiss loading fragment
-//                        val loadingDialogFragment =
-//                            fragment.parentFragmentManager.findFragmentByTag("LoadingFragment")
-//                        if (loadingDialogFragment is DialogFragment) {
-//                            Log.d("hiiii", "lodinggg88373ggg")
-//
-//                            loadingDialogFragment.dismiss()
-//                        }
                         if (response.isSuccessful) {
                             binding.textLoading.visibility = View.GONE;
                             val products = response.body()
@@ -115,10 +83,6 @@ class LainnyaFragment(parentFragment: FragmentManager) : Fragment() {
 
                                 // Tambahkan data ke ArrayList
                                 productList.addAll(filteredProducts.reversed())
-
-                                ////                        for (i in products) {
-////                            var data = Products(idProduk = i.idProduk, namaProduk   = i.namaProduk, deskripsiBarang = i.deskripsiBarang, harga = i.harga, stok = i.stok, kategori = i.kategori)
-////                            productList.add(data)
                                 Log.d("api ini", "body:{$productList}")
 
                                 // Siapkan adapter dan set ke RecyclerView
@@ -189,60 +153,12 @@ class LainnyaFragment(parentFragment: FragmentManager) : Fragment() {
                             Log.e("API Error", "Error response: ${response.errorBody()?.string()}")
                         }
                     }
-//                }
-//            }
+
             override fun onFailure(call: Call<List<Products>>, t: Throwable) {
-//                fragmentWeakReference.get()?.let { fragment ->
-//                    // Ensure the fragment is still in a valid state
-//                    if (fragment.isAdded && !fragment.isDetached) {
-//                        // Dismiss loading fragment
-//                        val loadingDialogFragment =
-//                            fragment.parentFragmentManager.findFragmentByTag("LoadingFragment")
-//                        if (loadingDialogFragment is DialogFragment) {
-//                            loadingDialogFragment.dismiss()
-//                        }
-                        Log.e("Network Error", "Error fetching products: ${t.message}")
-//                    }
-//                }
+            Log.e("Network Error", "Error fetching products: ${t.message}")
             }
         })
     }
-
-//    private fun deleteProduct(productId: String) {
-//        ApiClient.getInstance().deleteProduct(productId).enqueue(object : Callback<Void> {
-//            override fun onResponse(call: Call<Void>, response: Response<Void>) {
-//                if (response.isSuccessful) {
-//                    // Success: Remove item from the list and update the RecyclerView
-//                    val position = productList.indexOfFirst { it.idProduk.toString() == productId }
-//                    Log.d("posisi", position.toString())
-//                    if (position != -1) {
-//                        productList.removeAt(position)
-//
-//                        // Use the RecyclerView's adapter directly
-//                        (binding.recyclerViewtopproduct.adapter as? ProductAdapter)?.let { adapter ->
-//                            adapter.notifyItemRemoved(position)
-//                        }
-//
-//                        Toast.makeText(requireContext(), "Product deleted", Toast.LENGTH_SHORT)
-//                            .show()
-//                    }
-//                } else {
-//                    // Failure: Show a failure message
-//                    Toast.makeText(
-//                        requireContext(),
-//                        "Failed to delete: ${response.code()}",
-//                        Toast.LENGTH_SHORT
-//                    ).show()
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<Void>, t: Throwable) {
-//                Log.e("Network Error", "Error fetching products: ${t.message}")
-//            }
-//        })
-//
-//
-//    }
 
     companion object {
         /**

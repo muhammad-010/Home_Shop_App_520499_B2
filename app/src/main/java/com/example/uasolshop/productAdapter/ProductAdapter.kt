@@ -109,11 +109,6 @@ class ProductAdapter(val listproduk : ArrayList<Products>, private val onEditPro
 
     override fun onBindViewHolder(holder: ItemProductViewHolder, position: Int) {
         holder.bind(listproduk[position])
-
-//        holder.binding.delete.setOnClickListener {
-//            onDeleteClick(product.id.toString()) // Trigger the delete callback with product ID
-//        }
-
     }
     // Helper method to remove an item from the list
     fun removeItem(position: Int) {
@@ -129,5 +124,4 @@ class ProductAdapter(val listproduk : ArrayList<Products>, private val onEditPro
         Log.d("AdapterUpdate", "Data size after update: ${listproduk.size}")
         notifyDataSetChanged()
     }
-
 }

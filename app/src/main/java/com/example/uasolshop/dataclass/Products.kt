@@ -19,5 +19,4 @@ data class Products(
     val deskripsiBarang: String,
     @SerializedName("fotoBarang")
     val fotoBarang: String
-
 )

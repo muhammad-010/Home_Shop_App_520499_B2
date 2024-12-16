@@ -7,9 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
-import com.example.uasolshop.R
 import com.example.uasolshop.databinding.FragmentDetailDataBinding
-import com.example.uasolshop.databinding.FragmentEditDataBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -80,7 +78,6 @@ class DetailDataFragment : Fragment() {
                 "Peralatan" -> tvKategori.text = "Peralatan"
                 "Lainnya" -> tvKategori.text = "Lainnya"
             }
-
         }
     }
     companion object {

@@ -53,7 +53,6 @@ class ListProdukFragment : Fragment() {
 
         with(binding) {
             tambahProduk.setOnClickListener {
-//                navController.navigate(R.id.action_listProdukFragment3_to_tambahDataFragment2)
                 val tambahDataFragment = TambahDataFragment()
 
                 // Lakukan fragment transaction
@@ -63,48 +62,16 @@ class ListProdukFragment : Fragment() {
                     .commit()
             }
 
-//            tambahProduk.setOnClickListener {
-//
-//                // Perform FragmentTransaction to navigate to second fragment
-//                val secondFragment = TambahDataFragment() // Create the fragment you want to show
-//                val transaction = parentFragmentManager.beginTransaction()
-//                transaction.replace(R.id.nav_host_fragmen, secondFragment) // Replace current fragment with new one
-//                transaction.addToBackStack(null) // Optionally, add to back stack if you want to use back button
-//                transaction.commit() // Commit the transaction
-//            }
             back.setOnClickListener {
                 if (parentFragmentManager.backStackEntryCount > 0) {
                     // Jika ada fragment sebelumnya di back stack
                     parentFragmentManager.popBackStack()
-//                    Toast.makeText(requireContext(), "Navigated back successfully", Toast.LENGTH_SHORT).show()
                 } else {
                     // Jika tidak ada fragment di back stack
                     Toast.makeText(requireContext(), "No previous fragment to go back to", Toast.LENGTH_SHORT).show()
                 }
             }
 
-            // Handle back button click
-//            back.setOnClickListener {
-//
-//                if (parentFragmentManager.popBackStack()) {
-//                    // Berhasil kembali ke fragment sebelumnya
-//                    Toast.makeText(requireContext(), "Navigated back successfully", Toast.LENGTH_SHORT).show()
-//                } else {
-//                    // Tidak ada fragment lagi di back stack
-//                    Toast.makeText(requireContext(), "No previous fragment to go back to", Toast.LENGTH_SHORT).show()
-//                }
-////                parentFragmentManager.popBackStack()
-////                val transaction = requireActivity().supportFragmentManager.beginTransaction()
-////                transaction.replace(R.id.fragment_container, HomeAdminFragment()) // Replace fragment
-////                transaction.commit()
-////                findNavController().navigateUp()
-////                if (requireActivity().supportFragmentManager.backStackEntryCount > 0) {
-////                    requireActivity().onBackPressed() // Use onBackPressedDispatcher
-////                } else {
-////                    // Optionally handle when no backstack entry exists
-////                    Toast.makeText(requireContext(), "No previous fragment to go back to", Toast.LENGTH_SHORT).show()
-////                }
-//            }
             val tabIndex = arguments?.getInt("TAB_INDEX", 0) ?: 0
 
             // Initialize TabLayout and ViewPager

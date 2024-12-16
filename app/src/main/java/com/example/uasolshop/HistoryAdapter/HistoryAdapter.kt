@@ -22,7 +22,7 @@ class HistoryAdapter(val listbookhistory : List<History>):RecyclerView.Adapter<H
                 banyakbook2.text = data.banyak_book.toString()
 
                 Glide.with(itemView.context)
-                    .load(data.fotoBarang) // pastikan `data.imageUrl` adalah URL gambar yang valid
+                    .load(data.fotoBarang)
                     .into(fotoProduk)
 
             }
@@ -44,17 +44,4 @@ class HistoryAdapter(val listbookhistory : List<History>):RecyclerView.Adapter<H
     override fun onBindViewHolder(holder: ItemBookViewHolder, position: Int) {
         holder.bind(listbookhistory[position])
     }
-//    fun removeItem(position: Int) {
-//        listbookhistory.removeAt(position)
-//        notifyItemRemoved(position)
-//        notifyItemRangeChanged(position,listbookhistory.size)
-//    }
-//    fun updateData(newProducts: List<History>) {
-//        Log.d("AdapterUpdate", "Incoming data size: ${newProducts.size}")
-//        Log.d("AdapterUpdate", "Incoming data: $newProducts")
-//        listbookhistory.clear()
-//        listbookhistory.addAll(newProducts)
-//        Log.d("AdapterUpdate", "Data size after update: ${listbookhistory.size}")
-//        notifyDataSetChanged()
-//    }
 }

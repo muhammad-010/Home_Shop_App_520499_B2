@@ -54,15 +54,7 @@ class PeralatanGuestFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        setupRecyclerView(binding)
-        // Initialize Adapter
-//        productAdapter = ProductAdapter()
         fetchProducts(binding)
-        // Setup RecyclerView
-//        with(binding.recyclerViewtopproduct) {
-//            layoutManager = GridLayoutManager(context, 2) // Menggunakan GridLayoutManager
-//            adapter = productAdapter
-//        }
     }
 
 
@@ -84,9 +76,6 @@ class PeralatanGuestFragment : Fragment() {
                                 // Tambahkan data ke ArrayList
                                 productList.clear()
                                 productList.addAll(filteredProducts.reversed())
-                                ////                        for (i in products) {
-////                            var data = Products(idProduk = i.idProduk, namaProduk   = i.namaProduk, deskripsiBarang = i.deskripsiBarang, harga = i.harga, stok = i.stok, kategori = i.kategori)
-////                            productList.add(data)
                                 Log.d("api ini Peralatan", "body:{$productList}")
                                 adapterRetrofit =
                                     ProductGuestAdapter(productList, onBookProduk = { product ->

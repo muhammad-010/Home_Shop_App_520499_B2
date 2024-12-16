@@ -74,13 +74,7 @@ class HistoryFragment : Fragment() {
         getAllNotes()
 
     }
-//    private fun setupRecyclerView(binding: FragmentHomeBinding) {
-//        adapterRetrofit = HistoryAdapter(productList)
-//        binding.recyclerViewtopproduct.apply {
-//            layoutManager = GridLayoutManager(context, 2)
-//            adapter = adapterRetrofit
-//        }
-//    }
+
     private fun getAllNotes() {
         with(binding) {
             binding.recyclerViewproduct.layoutManager = LinearLayoutManager(requireContext())

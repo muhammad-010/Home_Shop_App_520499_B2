@@ -36,13 +36,6 @@ class LoginActivity : AppCompatActivity() {
                     ).show()
                 } else {
                     Login(username,password)
-
-//                    if (isValidUsernamePassword()) {
-//                        prefManager.setLoggedIn(true)
-//                        checkLoginStatus()
-//                    }else {
-//                        Toast.makeText(this@LoginActivity, "Username atau password salah", Toast.LENGTH_SHORT).show()
-//                    }
                 }
             }
             txtRegister.setOnClickListener {
@@ -53,17 +46,6 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-//    private fun isValidUsernamePassword(): Boolean{
-//        val username = prefManager.getUsername()
-//        Log.d("username",username)
-//        val password = prefManager.getPassword()
-//        Log.d("passworddd",password)
-//        val inputUsername = binding.etUserLogin.text.toString().lowercase()
-//        Log.d("usernamei",inputUsername)
-//        val inputPassword = binding.etPassLogin.text.toString().lowercase()
-//        Log.d("passi",inputPassword)
-//        return username == inputUsername && password == inputPassword
-//    }
 
     private fun Login(inputUsername: String, inputPassword: String) {
         val apiService = ApiClient.getInstance()  // Initialize your API service.

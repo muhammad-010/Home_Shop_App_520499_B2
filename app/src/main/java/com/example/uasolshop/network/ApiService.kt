@@ -29,10 +29,4 @@ interface ApiService {
     fun deleteProduct(
         @Path("id") id: String
     ):Call<Void>
-//            Call<Void>
-//    Call<Products>
-//    @PUT("produkGB/{id}")
-//    fun decreaseStock(
-//        @Path("id") id: String
-//    ): Call<Void>
 }

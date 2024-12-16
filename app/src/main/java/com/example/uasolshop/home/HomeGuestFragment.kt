@@ -197,16 +197,11 @@ class HomeGuestFragment : Fragment() {
                                 Log.d("FetchProducts", "Reversed products: $reversedProducts")
                                 Log.d("FetchProducts", "Limited products: $limitedProducts")
 
-//                        productList.addAll(limitedProducts)
-//                        Log.d("FetchProducts", "Product list after addAll: $productList")
-
                                 adapterRetrofit.updateData(limitedProducts)
                                 Log.d(
                                     "FetchProducts",
                                     "Product list after addAllsize1: ${productList.size}"
                                 )
-
-//                        binding.recyclerViewtopproduct.adapter = adapterRetrofit
                                 Log.d(
                                     "FetchProducts",
                                     "Product list after addAllsize: ${productList.size}"

@@ -85,9 +85,6 @@ class LainnyaGuestFragment : Fragment() {
                                 // Tambahkan data ke ArrayList
                                 productList.clear()
                                 productList.addAll(filteredProducts)
-                                ////                        for (i in products) {
-////                            var data = Products(idProduk = i.idProduk, namaProduk   = i.namaProduk, deskripsiBarang = i.deskripsiBarang, harga = i.harga, stok = i.stok, kategori = i.kategori)
-////                            productList.add(data)
                                 Log.d("api ini lainnya", "body:{$productList}")
 
                                 // Siapkan adapter dan set ke RecyclerView
